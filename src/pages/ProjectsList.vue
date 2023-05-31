@@ -3,7 +3,7 @@
 
         <div class="row">
             <div class="col-3 g-3" v-for="project in projects">
-                <AppProjectCard :projectProp="project" :baseUrlProp="this.baseUrl"></AppProjectCard>
+                <AppProjectCard :projectProp="project"></AppProjectCard>
             </div>
         </div>
         <nav aria-label="Page navigation example">
@@ -20,6 +20,7 @@
 <script>
 import axios from 'axios';
 import AppProjectCard from '../components/AppProjectCard.vue';
+import { store } from '../store.js';
 
 export default {
     name: "ProjectsList",
@@ -29,14 +30,14 @@ export default {
     data() {
         return {
             projects: [],
-            baseUrl: 'http://localhost:8000',
+            store,
             currentPage: 1,
             lastPage: null
         }
     },
     methods: {
         getProjects(changePage) {
-            axios.get(`${this.baseUrl}/api/projects`, { params: { page: changePage } }).then(response => {
+            axios.get(`${this.store.baseUrl}/api/projects`, { params: { page: changePage } }).then(response => {
                 console.log(response);
                 this.projects = response.data.results.data;
                 this.currentPage = response.data.results.current_page;
