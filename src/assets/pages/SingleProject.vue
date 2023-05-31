@@ -3,7 +3,9 @@
 </template>
 
 <script>
-
+export default {
+    name: "SingleProject"
+}
 </script>
 
 <style></style>

@@ -3,7 +3,9 @@
 </template>
 
 <script>
-
+export default {
+    name: "AppAbout"
+}
 </script>
 
 <style></style>
