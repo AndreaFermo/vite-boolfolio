@@ -22,7 +22,7 @@ import axios from 'axios';
 import AppProjectCard from '../components/AppProjectCard.vue';
 
 export default {
-    name: "ProjectList",
+    name: "ProjectsList",
     components: {
         AppProjectCard
     },
