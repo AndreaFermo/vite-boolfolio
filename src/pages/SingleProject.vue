@@ -29,7 +29,7 @@ export default {
                 this.project = response.data.results;
                 console.log(response);
             } else {
-                this.$routert.push({ name: 'not-found' });
+                this.$router.push({ name: 'not-found' });
             }
 
 
